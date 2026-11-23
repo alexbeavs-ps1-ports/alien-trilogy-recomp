@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Alien Trilogy",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "alien-trilogy-recomp",
+  "original": {
+    "region": "Europe",
+    "serial": "SLES-00101"
+  }
+}

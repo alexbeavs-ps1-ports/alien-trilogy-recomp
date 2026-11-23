@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "alien-trilogy-psx",
+  "name": "Alien Trilogy",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "alien-trilogy-recomp",
+  "rom_identity": {
+    "crc32": [
+      "fbc7c66d"
+    ],
+    "md5": [
+      "5f1b87f7b63e9c83a627800d98cc874b"
+    ],
+    "sha1": [
+      "edb3c1e0569bb5f7fc7af1b0edf665c686dd7004"
+    ],
+    "disc_serials": [
+      "SLES-00101"
+    ],
+    "sizes": [
+      252882336
+    ],
+    "filenames": [
+      "Alien Trilogy (Europe) (En,Fr,Es,It).cue",
+      "Alien Trilogy (Europe) (En,Fr,Es,It) (Track 1).bin"
+    ],
+    "track_counts": [
+      26
+    ],
+    "disc_fps": [
+      "1079c5390a8e0f974c1f3c71bb3b55cdb15e072c3e185476be0ff75b6430c6db"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/alien-trilogy-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "alien-trilogy-*-windows-x64.zip",
+      "linux-x64": "alien-trilogy-*-linux-x64.zip",
+      "macos-arm64": "alien-trilogy-*-macos-arm64.zip",
+      "macos-x64": "alien-trilogy-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "alien_trilogy.exe",
+    "linux": "alien_trilogy",
+    "macos": "alien_trilogy"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/alien-trilogy-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

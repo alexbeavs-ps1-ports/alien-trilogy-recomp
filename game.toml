@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Alien Trilogy"
+id = "SLES-00101"
+players = 1
+exe = "disc/SLES_001.01"
+disc = "disc/Alien Trilogy (Europe) (En,Fr,Es,It).cue"
+discs = ["disc/Alien Trilogy (Europe) (En,Fr,Es,It).cue"]
+disc_serials = ["SLES-00101"]
+load_address = "0x80010000"
+entry_pc = "0x800522E4"
+text_size = "0x0004B800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Alien Trilogy (Europe) (En,Fr,Es,It) (Track 1).bin"
+cue_name = "Alien Trilogy (Europe) (En,Fr,Es,It).cue"
+boot_exe = "SLES_001.01"
+known_sizes = [252882336]
+known_md5 = [
+  "5f1b87f7b63e9c83a627800d98cc874b",
+]
+known_sha1 = [
+  "edb3c1e0569bb5f7fc7af1b0edf665c686dd7004",
+]
+known_crc32 = [
+  "fbc7c66d",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Alien Trilogy Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 26
+required_disc_fp = "1079c5390a8e0f974c1f3c71bb3b55cdb15e072c3e185476be0ff75b6430c6db"
